@@ -12,7 +12,7 @@ const Navbar = () => {
       <nav className='flex justify-between items-center px-6 md:px-20 py-4'>
         <Link href='/' className='flex items-center gap-1'>
           <Image src='./assets/icons/logo.svg' alt='Logo' width={28} height={28} />
-          <p className='font-bold'>Price<span className='text-red-400'>Wise</span></p>
+          <p className='font-bold'>Price<span className='text-red-500'>Wise</span></p>
         </Link>
         <div className='flex items-center gap-5'> 
           {imgarray.map((imgs) => (
