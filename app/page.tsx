@@ -2,7 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import Searchbar from './components/Searchbar'
 import HeroCarousel from './components/HeroCarousel'
-const Home = () => {
+import { getAllProducts } from '@/lib/actions'
+import ProductCard from './components/ProductCard'
+const Home = async() => {
+  //super simple to get all the products no BT
+  const allProducts = await getAllProducts();
   return (
     <>
       <section className='px-6 md:px-20 py-24'>
@@ -23,8 +27,8 @@ const Home = () => {
       <section className='trending'>
         <h2>Trending</h2>
         <div className='flex flex-wrap gap-x-8 gap-y-16'>
-          {['Apple Iphone', 'Redmi k50i', 'Galaxy s24'].map((product) => (
-            <div key={product}>{product}</div>
+          {allProducts?.map((p) => (
+            <ProductCard key={p._id} product={p}/>
           ))}
         </div>
       </section>
