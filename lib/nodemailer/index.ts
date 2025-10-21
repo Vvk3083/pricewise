@@ -113,3 +113,68 @@ export const sendEmail = async (emailContent: EmailContent, sendTo: string[]) =>
     console.log('Email sent: ', info);
   })
 }
+
+//test purpose
+// export const sendEmail = async (emailContent : EmailContent, sendTo:string[]) => {
+//   // Create a test account (auto-generates credentials)
+//   const testAccount = await nodemailer.createTestAccount();
+
+//   // Create a transporter using Ethereal SMTP
+//   const transporter = nodemailer.createTransport({
+//     host: "smtp.ethereal.email",
+//     port: 587,
+//     auth: {
+//       user: testAccount.user,
+//       pass: testAccount.pass,
+//     },
+//   });
+
+//   // Define email options
+//   const mailOptions = {
+//     from: `"Test Sender" <${testAccount.user}>`,
+//     to: sendTo,
+//     subject: emailContent.subject,
+//     html: emailContent.body,
+//   };
+
+//   // Send the email
+//   transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) return console.log("❌ Error:", error);
+
+//     console.log("✅ Email sent:", info.messageId);
+//     console.log("📬 Preview URL:", nodemailer.getTestMessageUrl(info));
+//   });
+// };
+// export const sendEmail = async (emailContent : EmailContent, sendTo:string[]) => {
+//   try {
+//     // Create a test account
+//     const testAccount = await nodemailer.createTestAccount();
+
+//     // Create a transporter
+//     const transporter = nodemailer.createTransport({
+//       host: "smtp.ethereal.email",
+//       port: 587,
+//       auth: {
+//         user: testAccount.user,
+//         pass: testAccount.pass,
+//       },
+//     });
+
+//     // Define mail options
+//     const mailOptions = {
+//       from: `"Test Sender" <${testAccount.user}>`,
+//       to: sendTo,
+//       subject: emailContent.subject,
+//       html: emailContent.body,
+//     };
+
+//     // Wait for sendMail to complete
+//     const info = await transporter.sendMail(mailOptions);
+
+//     // Log results
+//     console.log("✅ Email sent:", info.messageId);
+//     console.log("📬 Preview URL:", nodemailer.getTestMessageUrl(info));
+//   } catch (error) {
+//     console.error("❌ Error sending email:", error);
+//   }
+// };
